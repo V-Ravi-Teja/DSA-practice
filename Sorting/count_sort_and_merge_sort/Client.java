@@ -13,6 +13,6 @@ public class Client {
     long endTime = System.nanoTime();
     long duration = endTime - startTime;
     System.out.println(merged);
-    System.out.println("Execution time: " + duration + " ms");
+    System.out.println("Execution time: " + duration + "ns");
   }
 }

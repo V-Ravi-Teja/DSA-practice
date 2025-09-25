@@ -49,7 +49,7 @@ public class Merge_Two_Sorted_Arrays {
     public ArrayList<Integer> solve(final List<Integer> A, final List<Integer> B) {
       
       //solution 1
-      //7667 ms
+      //7667 ns
 
       ArrayList<Integer> merged = new ArrayList<>();
       int i = 0, j = 0;
@@ -75,7 +75,7 @@ public class Merge_Two_Sorted_Arrays {
       return merged;
       
       //solution 2
-      //6124417 ms
+      //6124417 ns
 
       // return Stream.concat(A.stream(), B.stream())
       //              .sorted()
