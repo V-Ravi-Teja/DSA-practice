@@ -49,7 +49,8 @@ public class Merge_Two_Sorted_Arrays {
     public ArrayList<Integer> solve(final List<Integer> A, final List<Integer> B) {
       
       //solution 1
-      /*
+      //7667 ms
+
       ArrayList<Integer> merged = new ArrayList<>();
       int i = 0, j = 0;
       while (i < A.size() && j < B.size()) {
@@ -61,8 +62,7 @@ public class Merge_Two_Sorted_Arrays {
           j++;
         }
       }
-      if(merged.size() == A.size() + B.size()) return merged;
-      else{
+      if(merged.size() != A.size() + B.size()){      
         while(i < A.size()) {
           merged.add(A.get(i));
           i++;
@@ -71,14 +71,15 @@ public class Merge_Two_Sorted_Arrays {
           merged.add(B.get(j));
           j++;
         }
-        return merged;
       }
-      */
+      return merged;
       
       //solution 2
+      //6124417 ms
 
-      return Stream.concat(A.stream(), B.stream())
-                   .sorted()
-                   .collect(Collectors.toCollection(ArrayList::new));
+      // return Stream.concat(A.stream(), B.stream())
+      //              .sorted()
+      //              .collect(Collectors.toCollection(ArrayList::new));
+    
     }
 }
