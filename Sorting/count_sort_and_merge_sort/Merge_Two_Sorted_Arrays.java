@@ -2,6 +2,8 @@ package Sorting.count_sort_and_merge_sort;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -77,6 +79,6 @@ public class Merge_Two_Sorted_Arrays {
 
       return Stream.concat(A.stream(), B.stream())
                    .sorted()
-                   .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+                   .collect(Collectors.toCollection(ArrayList::new));
     }
 }
