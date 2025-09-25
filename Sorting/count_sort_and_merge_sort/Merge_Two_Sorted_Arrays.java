@@ -2,6 +2,7 @@ package Sorting.count_sort_and_merge_sort;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * Problem Description:
@@ -44,6 +45,38 @@ import java.util.List;
 public class Merge_Two_Sorted_Arrays {
     // DO NOT MODIFY THE LIST. IT IS READ ONLY
     public ArrayList<Integer> solve(final List<Integer> A, final List<Integer> B) {
-      return new ArrayList<>();
+      
+      //solution 1
+      /*
+      ArrayList<Integer> merged = new ArrayList<>();
+      int i = 0, j = 0;
+      while (i < A.size() && j < B.size()) {
+        if(A.get(i) <= B.get(j)) {
+          merged.add(A.get(i));
+          i++;
+        } else {
+          merged.add(B.get(j));
+          j++;
+        }
+      }
+      if(merged.size() == A.size() + B.size()) return merged;
+      else{
+        while(i < A.size()) {
+          merged.add(A.get(i));
+          i++;
+        }
+        while(j < B.size()) {
+          merged.add(B.get(j));
+          j++;
+        }
+        return merged;
+      }
+      */
+      
+      //solution 2
+
+      return Stream.concat(A.stream(), B.stream())
+                   .sorted()
+                   .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
     }
 }
